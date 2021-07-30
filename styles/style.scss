@@ -1,0 +1,168 @@
+@import 'navbar';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+// Hero Section CSS
+.hero {
+    background-color: slategrey;
+
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+        margin: 0 auto;
+        height: 90vh;
+        z-index: 1;
+        width: 100%;
+        max-width: 1200px;
+        padding-right: 24px;
+        padding-left: 24px;
+
+        @include tablet {
+            grid-template-columns: 1fr;
+            height: 100%;
+        }
+
+        &--left {
+            width: 100%;
+            line-height: 1.2;
+
+            @include tablet {
+                padding: 5rem 0;
+            }
+
+            @include mobile {
+                line-height: 1.5;
+            }
+        }
+
+        &--left h1 {
+            font-size: 4rem;
+            color: orchid;
+
+            @include mobile {
+                font-size: 1.5rem;
+            }
+        }
+
+        &--left h2 {
+            font-size: 4rem;
+            color: gold;
+
+            @include mobile {
+                font-size: 2rem;
+            }
+        } 
+        
+        &--left p {
+            font-size: 2rem;
+            color: skyblue;
+            margin-top: 1rem;
+            font-weight: 700;
+
+            @include mobile {
+                font-size: 1.5rem;
+           }   
+        }
+
+        &--btn {
+            font-size: 1rem;
+            background-color: white;
+            padding: 14px 32px;
+            border: none;
+            border-radius: 4px;
+            color: greenyellow;
+            margin-top: 2rem;
+            cursor: pointer;
+            position: relative;
+            outline: none;
+        }
+
+        &--btn a {
+            position: relative;
+            z-index: 2;
+            color: $dark;
+            text-decoration: none;
+        }
+
+        &--btn:after {
+            position: absolute;
+            content:'';
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: darkslateblue;
+            transition: all 0.3s;
+            border-radius: 4px;
+        }
+
+        &--btn:hover::after {
+            width: 100%;
+        }
+        &--right {
+            text-align: center;
+        }
+
+        &--img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+
+// Login box
+
+.box {
+    width: 380px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: gray;
+    text-emphasis: Center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 24px -3px rgba(0,0,0,0.5);
+    h1 {
+        color: black;
+        font-weight: 700;
+        padding-bottom: 30px;
+    }
+    input[type = "text"], input[type = "password"]{       
+        border: none;
+        background: skyblue;
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+        padding: 14px 10px;
+        width: 100%;
+        outline: none;
+        color: orangered;
+        font-weight: 500;  
+    }   
+    input[type = "submit"]{
+        border: none;
+        background: orangered;
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+        padding: 14px 40px;
+        width: 150%;
+        outline: none;
+        color: white;
+        font-weight: 600;  
+        border-radius: 24px;
+        cursor: pointer;
+        &:hover {
+            background: orangered;
+        }
+    }
+}
+
